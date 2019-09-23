@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_controller"
+        app:startDestination="@id/fragment_list">
+
+    <fragment
+            tools:layout="@layout/fragment_list"
+            android:label="list"
+            android:name="com.profesional.samplemvvmrazi.ui.listPage.FragmentList"
+            android:id="@+id/fragment_list">
+
+        <action
+                android:id="@+id/action_fragment_list_to_fragment_item"
+                app:destination="@id/fragment_item"
+        />
+
+    </fragment>
+
+    <fragment
+            tools:layout="@layout/fragment_item"
+            android:label="item"
+            android:name="com.profesional.samplemvvmrazi.ui.itemPage.ItemFragment"
+            android:id="@+id/fragment_item">
+        <action
+                android:id="@+id/action_fragment_item_to_fragment_list"
+                app:destination="@id/fragment_list"
+        />
+        <argument
+                android:name="itemmId"
+                app:argType="string" />
+
+    </fragment>
+
+
+</navigation>
